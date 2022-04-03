@@ -1,0 +1,29 @@
+<!-- <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+  
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+<div>
+  <mat-toolbar color="primary" class="d-flex justify-content-between">
+    <h2>
+      {{ pageMeta?.title }}
+      <span class="badge" *ngIf="pageMeta?.badge">{{pageMeta?.badge}}</span>
+    </h2>
+  <button mat-button color="warn" (click)="logout()">Logout</button>
+  </mat-toolbar>
+  <div class="container-fluid">
+    <ng-content></ng-content>
+  </div>
+</div>

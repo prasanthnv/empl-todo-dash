@@ -1,0 +1,19 @@
+<div class="container-fluid">
+<div class="py-3">
+  <button mat-flat-button color="warn" [routerLink]='["/employee"]'>Go back</button>
+
+</div>
+ <div class="my-3 w-100 d-flex justify-content-between">
+  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" (change)="taskFilter($event)">
+    <mat-button-toggle [value]="-1" [checked]="true" class="px-3">All</mat-button-toggle>
+    <mat-button-toggle [value]="1" >Completed</mat-button-toggle>
+    <mat-button-toggle [value]="0">Not Completed</mat-button-toggle>
+  </mat-button-toggle-group>
+  <button mat-flat-button color="accent" (click)="createTask()">Add Task</button>
+ </div>
+<mat-selection-list #shoes>
+    <mat-list-option *ngFor="let task of getTasks()" [selected]="task.completed" (click)="toggleTask(task)">
+      {{task.title}}
+    </mat-list-option>
+  </mat-selection-list>
+</div>
