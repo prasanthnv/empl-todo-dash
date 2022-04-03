@@ -1,0 +1,10 @@
+::ng-deep{
+    .mat-row{
+        cursor: pointer;
+       &:hover{
+        .mat-column-name{
+            text-decoration: underline;
+        }
+       }
+    }
+}
